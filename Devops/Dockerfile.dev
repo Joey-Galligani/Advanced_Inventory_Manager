@@ -1,0 +1,19 @@
+# Development Environment
+FROM node:latest AS dev
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files and install dependencies with npm ci
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Expose application port (adjust as needed)
+EXPOSE 3000
+
+# Command for development
+CMD ["npm", "start"]
+

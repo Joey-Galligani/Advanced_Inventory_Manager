@@ -1,0 +1,209 @@
+/* Global */
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.create-user-button, 
+.barcode-form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.create-user-button:hover, 
+.barcode-form button:hover {
+  background: #0056b3;
+}
+
+/* Formulaire */
+.barcode-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Grid de produits */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Cartes produits */
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+/* En-tête produit */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* Informations produit */
+.product-info {
+  padding-top: 10px;
+}
+
+.barcode {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.description {
+  font-style: italic;
+}
+
+.stock {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.out-of-stock {
+  color: red;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  background: #17a2b8;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+/* Boutons d'actions */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.edit-button, .delete-button {
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.edit-button {
+  background: #ffc107;
+  color: black;
+}
+
+.edit-button:hover {
+  background: #e0a800;
+}
+
+.delete-button {
+  background: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background: #b02a37;
+}
+
+/* Formulaire d'édition */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-button {
+  background: #28a745;
+  color: white;
+}
+
+.save-button:hover {
+  background: #218838;
+}
+
+.cancel-button {
+  background: #6c757d;
+  color: white;
+}
+
+.cancel-button:hover {
+  background: #5a6268;
+}
+
+/* Messages d'erreur */
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Chargement */
+.loading-spinner {
+  text-align: center;
+  font-size: 1.1em;
+  color: #007bff;
+}
+
+/* Add to ProductsPage.css */
+.rating-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}

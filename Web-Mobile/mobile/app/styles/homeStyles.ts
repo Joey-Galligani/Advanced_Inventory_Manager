@@ -1,0 +1,111 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "flex-start",
+    gap: 20,
+    overflow: "visible",
+    padding: 20,
+    backgroundColor: "white",
+    position: "relative",
+  },
+  modal: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 100,
+    backgroundColor: "white",
+    padding: 20,
+  },
+  searchBarContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: "rgba(0, 0, 0, .3)",
+    zIndex: 1,
+    width: "100%",
+    height: "100%",
+    padding: 20,
+  },
+  searchBarWrapper: {
+    gap: 20,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "white",
+    paddingRight: 5,
+  },
+  searchBar: {
+    padding: 10,
+    width: "80%",
+  },
+  menuBurger: {},
+  searchBox: {
+    flexDirection: "row-reverse",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 10,
+    gap: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  header: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 10,
+  },
+  headerWrapper: {
+    flex: 1,
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+    borderRadius: 99999,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  errorText: {
+    color: "rgb(197, 138, 138)",
+  },
+  buttons: {
+    flexDirection: "column",
+    gap: 10,
+    width: "100%",
+  },
+  button: {
+    backgroundColor: "rgb(197, 138, 138)",
+    padding: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    justifyContent: "center",
+    borderRadius: 9999,
+    boxShadow: "0 0 10px rgba(0, 0, 0, .2)",
+  },
+  secondaryButton: {
+    backgroundColor: "rgb(172, 172, 172)",
+  },
+  buttonSquare: {
+    aspectRatio: 1,
+    padding: 5,
+    width: 42,
+  },
+  buttonDisabled: { opacity: 0.5 },
+  buttonText: {
+    color: "white",
+    fontWeight: "bold",
+  },
+  menuButtons: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    gap: 10,
+  },
+  resultText: { fontSize: 16, fontWeight: "bold" },
+  paypalButtons: { width: "100%", marginVertical: 20 },
+});
+
+export default styles;

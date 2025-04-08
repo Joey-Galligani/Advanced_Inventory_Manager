@@ -1,0 +1,109 @@
+/* Invoices.css */
+.invoices-container {
+  padding: 2rem;
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  color: white;
+}
+
+.invoices-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.error-message {
+  background-color: #662900;
+  color: #ff6b00;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.table-container {
+  background: #2d2d2d;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.invoices-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invoices-table th,
+.invoices-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.invoices-table th {
+  background-color: #232323;
+  color: #888;
+  font-weight: 500;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+  background-color: #f0f0f0;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.pending {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.completed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.failed {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.declined {
+  background-color: #fbe9e7;
+  color: #d84315;
+}
+
+.refunded {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.partially_refunded {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.invoice-modal {
+  background-color: #2d2d2d !important;
+  color: white !important;
+  padding: 2rem !important;
+  border-radius: 12px !important;
+  max-width: 500px !important;
+  width: 90% !important;
+}
+
+.invoice-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}

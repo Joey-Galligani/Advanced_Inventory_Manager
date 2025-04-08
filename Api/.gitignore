@@ -1,0 +1,28 @@
+# Node.js modules
+node_modules/
+
+# Log files
+*.log
+
+# Dependency directories
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment files (do not commit sensitive information)
+.env
+
+# IDEs or editor-specific files
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Build directories
+dist/
+build/
+
+# Package-lock or yarn lock (if you want to use only one package manager)
+yarn.lock

@@ -1,0 +1,49 @@
+stages:
+  - build
+  - test
+  - image
+
+variables:
+  IMAGE_NAME: development
+  IMAGE_TAG: latest
+  DOCKER_TLS_CERTDIR: ""  # Disable TLS for Docker-in-Docker
+
+test:
+  stage: test
+  image: node:latest
+  script:
+    - npm ci
+    - npm test
+
+build:
+  stage: build
+  image: node:latest
+  script:
+    - npm ci
+    - npm run build
+
+build-docker-image:
+  stage: image
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: ""  # Disable TLS for DinD
+  before_script:
+    # Login to Docker registry
+    - echo $CI_REGISTRY_ACCESS_TOKEN | docker login $CI_REGISTRY -u '$CI_REGISTRY_USER' --password-stdin
+  script:
+    # Configure IMAGE_NAME based on branch
+    - |
+      if [ "$CI_COMMIT_BRANCH" == "main" ]; then
+        IMAGE_NAME="production"
+      elif [ "$CI_COMMIT_BRANCH" == "development" ]; then
+        IMAGE_NAME="staging"
+      else
+        echo "Skipping Docker image build for branch $CI_COMMIT_BRANCH"
+        exit 0
+      fi
+    # Build and push Docker image
+    - "docker info"
+    - "docker build -t $CI_REGISTRY_IMAGE/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA ."
+    - "docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA"

@@ -1,0 +1,30 @@
+services:
+  api:
+    build: .
+    container_name: express-api
+    ports:
+      - "127.0.0.1:8080:8080"  # Expose the API on port 8080
+    env_file:
+      - .env  # Load environment variables from .env file
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/trinity  # MongoDB connection URI
+    volumes:
+      - express-api:/var/log/express  # Persist API logs between container restarts
+    depends_on:
+      - mongo  # Ensure that MongoDB starts before the API
+  mongo:
+    image: mongo:latest
+    container_name: trinity-db
+    ports:
+      - "127.0.0.1:27017:27017"  # Expose MongoDB on port 27017
+    volumes:
+      - mongo_data:/data/db  # Persist MongoDB data between container restarts
+      - mongo_logs:/var/log/mongodb  # Persist MongoDB logs between container restarts
+
+volumes:
+  mongo_data:
+    driver: local  # Using local volume to persist MongoDB data
+  mongo_logs:
+    driver: local  # Using local volume to persist MongoDB logs
+  express-api:
+    driver: local  # Using local volume to persist API logs
